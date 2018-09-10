@@ -30,4 +30,47 @@ for(var i = 0; i< 100; i++){
 console.log(` 剩下的数值是 ${total}`);
 ```
 
+
+
 ### 回文世界
+
+无论正着读还是倒着读全都相同的单词或短语称为“回文”（palindrome ）。编写函数，判断输入的字符串是否为回文，是为true，否则为false
+
+```javascript
+function isPalindrome(palindrome){
+    if (!palindrome) return false; // null或undefined
+    palindrome += "";
+    for(var i = 0;  i < palindrome.length/2; i++){
+        if(palindrome[i] !== palindrome[palindrome.length-i-1] ){
+
+            return false;
+        }				
+        return true;
+    }
+}
+```
+
+上面这种方式是传统的采取比较字符串的第一位与最后一位并前后逐个比较的方法，当字符串比较短的时候，可以采用这种方法。可以明显注意到，每次执行循环的时候，都会执行一次 `palinedrome.length-i-1`。如果可以把它放在 for 循环的外面执行，就可以提高效率。
+
+下面这种方法是利用 javaScript 自带的一些方法实现的。
+
+```javascript
+function isPalindrome(palindrome){
+    if (!palindrome) return false; // null或undefined
+    palindrome += "";
+    return palindrome === palindrome.split('').reverse().join('');
+}
+```
+
+这种方法很方便，但效率不高，字符串分割，倒转，聚合都需要很多额外的操作。 
+
+另外有 一则数学观察报道与回文相关，非常有趣。1984年，计算机科学家在一篇杂志上，发表了一篇文章。提出了一个有趣的算法。
+
+1. 选择任意数值；
+2. 翻转此数值（例如，13 -> 31）,并将原数值和翻转的数字相加（13 + 31）
+3. 相加的结果若不是回文数，则返回2反复执行，若是回文则终止算法。
+
+大部分数值会有回文数，但也不能证明所有数值会有对应的回文数。有些数值妨碍了算法的通用性，其中最小的数就是 196 。
+
+这个数值被称为 “196数值” 或 “196问题”。
+

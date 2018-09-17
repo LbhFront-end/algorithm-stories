@@ -161,3 +161,13 @@ console.log(getWeekName(2018,9,17)); // 星期一
 
 `Math.floor` 返回小于或等于一个给定数字的最大整数（向下取整）
 
+当然，如果嫌麻烦的话，其实js 的`Date`对象其实也有类似方法
+
+```javascript
+new Date().getDay();
+// 1
+new Date('2018/9/17').getDay();
+// 1
+// [0~6]代表星期日到星期六
+```
+

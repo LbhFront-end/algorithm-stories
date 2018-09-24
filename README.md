@@ -231,7 +231,7 @@ int isSorted(int* array, int length){
 }
 ```
 
-快速排序的javaScript 实现
+快速排序的 javaScript 实现
 
 ```javascript
 function quickSort(arr){
@@ -273,7 +273,7 @@ console.log(quickSort(a));
 >
 > B = { ,,..., }
 
-设计算法判断集合 A 是否为 集合 B 的子集。即$A\subseteq B $ 
+设计算法判断集合 A 是否为 集合 B 的子集。即<img src="https://latex.codecogs.com/gif.latex?A&space;\subseteq&space;B" title="A \subseteq B" /> 
 
 很多人可能第一个想法是“暴力破解法”，就是遍历两个集合，取出里面的元素进行比较，如果有相同的则 `break` 跳出循环，而最外面返回 `true`,如果有循环中没有相同的则直接返回 `false`，主要用的是嵌套 `for` 循环。
 

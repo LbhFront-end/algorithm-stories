@@ -1,5 +1,3 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script> 
-
 ## 算法枕边书
 
 ### 第一章
@@ -279,11 +277,11 @@ console.log(quickSort(a));
 
 这种算法在功能符合以上要求，但是当要比较的两个集合的长度非常大时，性能就会急速下降。
 
-嵌套 `for` 循环的算法，执行速度与两个循环的最大循环次数之积成反比，算法的整体执行速度会是 $C_1*A*B$,$C_1$是考虑到循环内部消耗的时间而设定的常数。
+嵌套 `for` 循环的算法，执行速度与两个循环的最大循环次数之积成反比，算法的整体执行速度会是 <img src="https://latex.codecogs.com/gif.latex?C_1*A*B" title="C_1*A*B" />,<img src="https://latex.codecogs.com/gif.latex?C_1" title="C_1" />是考虑到循环内部消耗的时间而设定的常数。
 
 下面第二个算法效率会更高，若集合 A 和集合 B 已按照先相同顺序排序，那么判断 A 是否为 B 子集的过程会非常简单。
 
-首先对两个集合进行排序，当循环中，A集合的a元素对应B集合的b元素，那么在B集合中查找A集合的下一个元素aa的时候，就不用从头开始查找，而是直接从b后面的元素开始即可。这是利用排序大大提高算法性能的典型案例。高德纳教授将执行这种算法的一般速度称为 $C_2(m \log m + n \log n )$。$m \log m$和  $ n \log n $ 分别代表排序集合 A 和 集合 B 的所用的速度，而常数 $C_2$表示上述步骤进行比较时耗费的时间。（公式并不是经过严密的数学原理推导出来的，而是学习计算机科学的人们通过先约定的规则推导出来的）。
+首先对两个集合进行排序，当循环中，A集合的a元素对应B集合的b元素，那么在B集合中查找A集合的下一个元素aa的时候，就不用从头开始查找，而是直接从b后面的元素开始即可。这是利用排序大大提高算法性能的典型案例。高德纳教授将执行这种算法的一般速度称为<img src="https://latex.codecogs.com/gif.latex?$C_2(m&space;\log&space;m&space;&plus;&space;n&space;\log&space;n&space;)$" title="$C_2(m \log m + n \log n )$" />。<img src="https://latex.codecogs.com/gif.latex?$m&space;\log&space;m$" title="$m \log m$" />和  <img src="https://latex.codecogs.com/gif.latex?$&space;n&space;\log&space;n&space;$" title="$ n \log n $" /> 分别代表排序集合 A 和 集合 B 的所用的速度，而常数 <img src="https://latex.codecogs.com/gif.latex?$C_2$" title="$C_2$" />表示上述步骤进行比较时耗费的时间。（公式并不是经过严密的数学原理推导出来的，而是学习计算机科学的人们通过先约定的规则推导出来的）。
 
 搜索算法会不断提问，对数据结构中保存的数值以最快、最高效的方法找出特定值。
 
